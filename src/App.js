@@ -14,8 +14,15 @@ class App extends Component {
 
   switchHandler1 = () => {
     this.setState({
-      otp_show: !this.state.otp_show,
-      email_show: !this.state.email_show,
+      otp_show: true,
+      email_show: false,
+    });
+  };
+
+  switchHandler2 = () => {
+    this.setState({
+      otp_show: false,
+      email_show: true,
     });
   };
 
@@ -33,14 +40,14 @@ class App extends Component {
                 <Btn
                   text="With OTP"
                   click={this.switchHandler1}
-                  styles="oe_btn"
+                  styles={`oe_btn ${this.state.otp_show && "orange"}`}
                 />
               </div>
               <div class="col-lg-6">
                 <Btn
                   text="With Email"
-                  click={this.switchHandler1}
-                  styles="oe_btn"
+                  click={this.switchHandler2}
+                  styles={`oe_btn ${this.state.email_show && "orange"}`}
                 />
               </div>
             </div>
