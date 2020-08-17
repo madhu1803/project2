@@ -10,7 +10,6 @@ class App extends Component {
   state = {
     otp_show: true,
     email_show: false,
-    bg_color: "",
   };
 
   switchHandler1 = () => {
